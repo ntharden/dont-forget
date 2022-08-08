@@ -21,16 +21,18 @@
 <section class="card-container">
   {% for topic in topics %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/react.png' %}" 
-            alt="React logo"
-          >
-        </div>
-        <h2 class="card-title">{{ topic.name }}</h2>
-        <p><small>{{ topic.description }}</small></p>
-      </div>
+			<a href="/cats/{{ cat.id }}">
+				<div class="card-content">
+					<div class="card-img-container">
+						<img 
+							src="{% static 'images/react.png' %}" 
+							alt="React logo"
+						>
+					</div>
+					<h2 class="card-title">{{ topic.name }}</h2>
+					<p><small>{{ topic.description }}</small></p>
+				</div>
+			</a>
     </div>
   {% endfor %}
 </section>

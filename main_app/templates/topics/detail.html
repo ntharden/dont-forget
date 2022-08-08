@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/cats/cat-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="topic-container">
+  <div class="topic-img">
+    <img 
+      src="{% static 'images/ga-logo.png' %}" 
+      alt="General Assembly logo"
+    >
+  </div>
+  <div class="topic-details">
+    <h1>{{ topic.name }}</h1>
+    <p>{{ topic.description }}</p>
+  </div>
+</section>
+
+{% endblock %}
