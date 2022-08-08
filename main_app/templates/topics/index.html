@@ -21,7 +21,7 @@
 <section class="card-container">
   {% for topic in topics %}
     <div class="card">
-			<a href="/cats/{{ cat.id }}">
+			<a href="{% url 'topics_detail' topic.id %}">
 				<div class="card-content">
 					<div class="card-img-container">
 						<img 
