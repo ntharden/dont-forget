@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Topic
 from django.urls import reverse
 
@@ -29,3 +29,11 @@ class TopicCreate(CreateView):
 		
 	def get_absolute_url(self):
 		return reverse('topics_detail', kwargs={'topic_id': self.id})
+
+class TopicUpdate(UpdateView):
+  model = Topic
+  fields = '__all__'
+
+class TopicDelete(DeleteView):
+  model = Topic
+  success_url = '/topics/'

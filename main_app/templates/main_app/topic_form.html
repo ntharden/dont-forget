@@ -7,6 +7,12 @@
 
 {% block content %}
 
+{% if topic %}
+    <h1>Edit {{ topic.name }}</h1>
+  {% else %}
+    <h1>Add a Topic</h1>
+  {% endif %}
+
 <div class="page-header">
   <h1>Add a Topic</h1>
   <img src="{% static 'images/ga-logo.png' %}" alt="General Assembly logo"/>

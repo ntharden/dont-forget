@@ -21,6 +21,10 @@
   <div class="topic-details">
     <h1>{{ topic.name }}</h1>
     <p>{{ topic.description }}</p>
+    <div class="topic-actions">
+      <a href="{% url 'topics_update' topic.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'topics_delete' topic.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 
