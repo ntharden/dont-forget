@@ -24,10 +24,22 @@
 			<a href="{% url 'topics_detail' topic.id %}">
 				<div class="card-content">
 					<div class="card-img-container">
-						<img 
-							src="{% static 'images/react.png' %}" 
-							alt="React logo"
-						>
+						{% if topic.category = 'Javascript' %}
+							<img 
+								src="{% static 'images/js.png' %}" 
+								alt="Javascript logo"
+							>
+  					{% elif topic.category = 'React'%}
+							<img 
+								src="{% static 'images/js.png' %}" 
+								alt="React logo"
+							>
+						{% elif topic.category = 'Computer Science'%}
+							<img 
+								src="{% static 'images/ga.png' %}" 
+								alt="General Assembly logo"
+							>
+ 						{% endif %}
 					</div>
 					<h2 class="card-title">{{ topic.name }}</h2>
 					<p><small>{{ topic.description }}</small></p>
