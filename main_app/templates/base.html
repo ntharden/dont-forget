@@ -28,8 +28,9 @@
     </div>
     <nav>
       <ul>
-				<li><a href="/topics">Topics</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="{% url 'topics_index' %}">All Topics</a></li>
+        <li><a href="{% url 'topics_create' %}">Add a Topic</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
       </ul>
     </nav>
   </header>

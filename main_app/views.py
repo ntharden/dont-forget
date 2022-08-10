@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.edit import CreateView
 from .models import Topic
 
 # Create your views here.
@@ -17,3 +17,7 @@ def topics_index(request):
 def topics_detail(request, topic_id):
 	topic = Topic.objects.get(id=topic_id)
 	return render(request, 'topics/detail.html', { 'topic': topic })
+
+class TopicCreate(CreateView):
+	model = Topic
+	fields = '__all__'
