@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='topic',
             name='notion_url',
-            field=models.CharField(default='https://www.notion.so/seiremote/SEI-Remote-5-23-76818627ae2d4764963bf1fe86a6b1c3', max_length=50),
+            field=models.CharField(default='https://www.notion.so/seiremote/SEI-Remote-5-23-76818627ae2d4764963bf1fe86a6b1c3', max_length=250),
             preserve_default=False,
         ),
     ]

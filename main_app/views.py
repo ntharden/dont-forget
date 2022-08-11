@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Topic
 from django.urls import reverse
+from django.contrib.auth.views import LoginView
 
 # Create your views here.
 
@@ -24,6 +25,10 @@ class TopicCreate(CreateView):
 	fields = '__all__'
 	success_url = '/topics/'
 
+	def form_valid(self, form):
+		form.instance.user = self.request.user
+		return super().form_valid(form)
+
 	def __str__(self):
 		return self.template_name
 		
@@ -37,3 +42,6 @@ class TopicUpdate(UpdateView):
 class TopicDelete(DeleteView):
   model = Topic
   success_url = '/topics/'
+
+class Home(LoginView):
+  template_name = 'home.html'

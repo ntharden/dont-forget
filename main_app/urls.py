@@ -7,4 +7,5 @@ urlpatterns = [
   path('topics/', views.topics_index, name='topics_index'),
   path('topics/<int:topic_id>', views.topics_detail, name='topics_detail'),
   path('topics/create/', views.TopicCreate.as_view(), name='topics_create'),
+  path('', views.Home.as_view(), name='home'),
 ]
