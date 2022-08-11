@@ -11,9 +11,9 @@
   <div class="topic-container">
     <img src="{% static 'images/dont-forget.png' %}" alt="landing page photo" />
   </div>
-  <img
+  {% comment %} <img
 		src="{% static 'images/ga-logo.png' %}"
-		alt="The General Assembly Logo" />
+		alt="The General Assembly Logo" /> {% endcomment %}
 </section>
 {% if not user.is_authenticated %}
   <section>
