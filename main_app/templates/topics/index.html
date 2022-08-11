@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/topics/topic-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Topics</h1>
+  <img src="{% static 'images/js.png' %}" alt="Javascript logo" />
+  <img src="{% static 'images/react.png' %}" alt="React logo" />
+  <img src="{% static 'images/ga.png' %}" alt="General Assembly logo" />
+</section>
+
+<section class="card-container">
+  {% for topic in topics %}
+    <div class="card">
+			<a href="{% url 'topics_detail' topic.id %}">
+				<div class="card-content">
+					<div class="card-img-container">
+						{% if topic.category == 'Javascript' %}
+							<img 
+								src="{% static 'images/js.png' %}" 
+								alt="Javascript logo"
+							>
+  					{% elif topic.category == 'React'%}
+							<img 
+								src="{% static 'images/js.png' %}" 
+								alt="React logo"
+							>
+						{% else %}
+							<img 
+								src="{% static 'images/ga.png' %}" 
+								alt="General Assembly logo"
+							>
+ 						{% endif %}
+					</div>
+					<h2 class="card-title">{{ topic.name }}</h2>
+					<p><small>{{ topic.description }}</small></p>
+				</div>
+			</a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
