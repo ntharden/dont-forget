@@ -5,7 +5,7 @@
 <link 
   rel="stylesheet" 
   type="text/css" 
-  href="{% static 'css/topic-detail.css' %}"
+  href="{% static 'css/topics/topic-detail.css' %}"
 />
 {% endblock %}
 
@@ -13,18 +13,28 @@
 
 <section class="topic-container">
   <div class="topic-img">
-    <img 
-      src="{% static 'images/ga-logo.png' %}" 
-      alt="General Assembly logo"
-    >
+    {% if topic.category == 'Javascript' %}
+      <img id='logo'
+        src="{% static 'images/js.png' %}" 
+        alt="Javascript logo"
+      >
+    {% elif topic.category == 'React'%}
+      <img id='logo'
+        src="{% static 'images/react.png' %}" 
+        alt="React logo"
+      >
+    {% else %}
+      <img id='logo'
+        src="{% static 'images/ga.png' %}" 
+        alt="General Assembly logo"
+      >
+    {% endif %}
   </div>
   <div class="topic-details">
     <h1>{{ topic.name }}</h1>
+    <p><a href="{{ topic.youtube_url  }}" target="_blank" rel="noopener noreferrer">Youtube</a> | 
+      <a href="{{ topic.notion_url  }}" target="_blank" rel="noopener noreferrer">Notion</a></p>
     <p>{{ topic.description }}</p>
-    <a href="{{ topic.youtube_url  }}" target="_blank" rel="noopener noreferrer">Youtube</a>
-    <a href="{{ topic.notion_url  }}" target="_blank" rel="noopener noreferrer">Notion</a>
-    <p>{{ topic.youtube_url_formatted }}</p>
-    <p>{{ topic.notion_url_formatted }}</p>
     <div class="topic-actions">
       <a href="{% url 'topics_update' topic.id %}" class="btn warn">Edit</a>
       <a href="{% url 'topics_delete' topic.id %}" class="btn danger">Delete</a>
