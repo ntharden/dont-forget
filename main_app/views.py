@@ -44,6 +44,7 @@ class TopicCreate(LoginRequiredMixin, CreateView):
 class TopicUpdate(LoginRequiredMixin, UpdateView):
   model = Topic
   fields = '__all__'
+  success_url = '/topics/'
 
 class TopicDelete(LoginRequiredMixin, DeleteView):
   model = Topic
