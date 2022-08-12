@@ -25,17 +25,17 @@
 				<div class="card-content">
 					<div class="card-img-container">
 						{% if topic.category == 'Javascript' %}
-							<img 
+							<img id='logo'
 								src="{% static 'images/js.png' %}" 
 								alt="Javascript logo"
 							>
   					{% elif topic.category == 'React'%}
-							<img 
+							<img id='logo'
 								src="{% static 'images/react.png' %}" 
 								alt="React logo"
 							>
 						{% else %}
-							<img 
+							<img id='logo'
 								src="{% static 'images/ga.png' %}" 
 								alt="General Assembly logo"
 							>
